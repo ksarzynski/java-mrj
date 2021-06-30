@@ -1,0 +1,22 @@
+1. robie jara z biblioteki
+2. generowanie klucza do podpisania
+	java security 02 kopiuje komende keytool
+	wpierdalam to w cmd
+	klucz kopiuje tam gdzie jest jar
+	w cmd przechodze do jara i wpisuje z 5 punktu jarsigner
+	
+
+
+
+keytool -genkeypair -keyalg rsa -keysize 2048 -validity 731 -alias ksarzynski -keystore ksarzynskikeys.jks -dname "CN=Kacper Sarzynski"
+123456
+
+jarsigner -keystore ksarzynskikeys.jks -storepass 123456 -signedjar slibrary.jar library.jar ksarzynski
+
+
+
+1. jar z app
+2. podpisany jar z app
+grant{
+permission java.security.AllPermission "", "";};
+-Djava.security.manager -Djava.security.policy=C:\Users\Krzysztof\Documents\lab09_app\src\Policy.policy
